@@ -1,0 +1,4 @@
+"id","name","description","active"
+"hr_hospital_doctor_1","Dr. Frank","best","True"
+"hr_hospital_doctor_2","Dr. Jon","good","True"
+"hr_hospital_doctor_3","Dr. Ben","norm","True"
