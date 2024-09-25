@@ -2,22 +2,30 @@ import logging
 
 from odoo import models, fields
 
+
 _logger = logging.getLogger(__name__)
 
 
 class HrHospitalPatient(models.Model):
     _name = 'hr.hospital.patient'
+    _inherit = ['human.mixin', ]
     _description = 'Patient'
 
-    name = fields.Char()
-    age = fields.Integer()
-    description = fields.Text()
+    birthday = fields.Date()
+    age = fields.Integer(string="Age", compute='_compute_age')
+    passport = fields.Text(string='Passport')
+    contact = fields.Char(string='Contact')
 
-    hr_hospital_visit_id = fields.Many2one(
-        comodel_name='hr.hospital.visit',
-        string="Visit",
+    hr_hospital_doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+        string="Doctor",
     )
-    hr_hospital_diseases_ids = fields.Many2many(
-        comodel_name='hr.hospital.diseases',
-        string="Diseases",
-    )
+
+    def _compute_age(self):
+        for record in self:
+            if record.birthday:
+                birthday = fields.Date.from_string(record.birthday)
+                record.age = fields.Date.today().year - birthday.year
+            else:
+                record.age = 0
+

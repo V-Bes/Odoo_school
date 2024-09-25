@@ -1,4 +1,5 @@
 import logging
+from email.policy import default
 
 from odoo import models, fields
 
@@ -10,7 +11,11 @@ class HrHospitalDiseases(models.Model):
     _description = 'Diseases'
 
     name = fields.Char()
-    hr_hospital_patient_ids = fields.Many2many(
-        comodel_name='hr.hospital.patient',
-        string='Diseases',
+    description = fields.Text()
+    approved = fields.Boolean(
+        default=False
+    )
+    hr_hospital_visit_id = fields.Many2one(
+        comodel_name='hr.hospital.visit',
+        string="Visit",
     )
