@@ -1,6 +1,7 @@
 import logging
 
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError, UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -36,3 +37,30 @@ class HrHospitalVisit(models.Model):
        inverse_name='hr_hospital_visit_id',
        string="Diseases",
     )
+
+    @api.constrains('planned_date','visit_date','hr_hospital_doctor_id')
+    def _check_planned_date(self):
+        for record in self:
+            if record.status_visit == 'completed':
+                raise ValidationError('It is forbidden to change "Planned date"'
+                                      ', "Visit date", "Doctor" in the status '
+                                      '"completed"')
+
+    @api.ondelete(at_uninstall=False)
+    def _prevent_delete(self):
+        for record in self:
+            if record.hr_hospital_diseases_ids:
+                raise ValidationError(
+                    "You cannot delete a visit that has 'diseases'.")
+
+    @api.constrains('hr_hospital_doctor_id', 'hr_hospital_patient_id', 'visit_date')
+    def _check_duplicate(self):
+        for record in self:
+            is_duplicate=self.search([
+                ('hr_hospital_doctor_id','=',record.hr_hospital_doctor_id.id),
+                ('hr_hospital_patient_id', '=', record.hr_hospital_patient_id.id),
+                ('visit_date', '=', record.visit_date),
+                ('id', '!=', record.id),
+            ])
+            if is_duplicate:
+                raise ValidationError('Duplicate visit found for the same doctor, patient, and date.')

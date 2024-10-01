@@ -12,9 +12,18 @@ class HrHospitalPatient(models.Model):
     _description = 'Patient'
 
     birthday = fields.Date()
-    age = fields.Integer(string="Age", compute='_compute_age')
-    passport = fields.Text(string='Passport')
-    contact = fields.Char(string='Contact')
+    age = fields.Integer(
+        string="Age",
+        compute='_compute_age'
+    )
+
+    passport = fields.Text(
+        string='Passport'
+    )
+
+    contact = fields.Char(
+        string='Contact'
+    )
 
     hr_hospital_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
@@ -24,8 +33,6 @@ class HrHospitalPatient(models.Model):
     def _compute_age(self):
         for record in self:
             if record.birthday:
-                birthday = fields.Date.from_string(record.birthday)
-                record.age = fields.Date.today().year - birthday.year
+                record.age = fields.Date.today().year - record.birthday.year
             else:
                 record.age = 0
-
