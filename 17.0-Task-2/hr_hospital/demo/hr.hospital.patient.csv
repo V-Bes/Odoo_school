@@ -1,4 +1,4 @@
-"id","name","age","hr_hospital_diseases_ids:id"
-"hr_hospital_patient_1","Tom","56","hr_hospital.hr_hospital_diseases_1"
-"hr_hospital_patient_2","Sten","47","hr_hospital.hr_hospital_diseases_3"
-"hr_hospital_patient_3","Jim","32","hr_hospital.hr_hospital_diseases_2"
+"id","first_name","last_name","hr_hospital_doctor_id:id"
+"hr_hospital_patient_1","Tom","Curat","hr_hospital.hr_hospital_doctor_1"
+"hr_hospital_patient_2","Sten","Fashovski","hr_hospital.hr_hospital_doctor_2"
+"hr_hospital_patient_3","Jim","Perry","hr_hospital.hr_hospital_doctor_3"

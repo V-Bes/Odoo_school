@@ -9,7 +9,7 @@
                     <field name="status_visit"/>
                     <field name="hr_hospital_doctor_id" widget="many2one_tags"/>
                     <field name="hr_hospital_patient_id" widget="many2one_tags"/>
-                    <field name="hr_hospital_diseases_ids" widget="one2many_tags"/>
+                    <field name="hr_hospital_diagnosis_ids" widget="one2many_tags"/>
                 </tree>
             </field>
         </record>
@@ -28,7 +28,7 @@
                                 <field name="status_visit"/>
                                 <field name="hr_hospital_doctor_id" widget="many2one_tags"/>
                                 <field name="hr_hospital_patient_id" widget="many2one_tags"/>
-                                <field name="hr_hospital_diseases_ids" widget="one2many_tags"/>
+                                <field name="hr_hospital_diagnosis_ids" widget="one2many_tags"/>
                              </group>
                         </group>
                     </sheet>

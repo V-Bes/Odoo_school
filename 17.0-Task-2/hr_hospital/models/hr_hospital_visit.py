@@ -32,10 +32,10 @@ class HrHospitalVisit(models.Model):
        string="Patient",
     )
 
-    hr_hospital_diseases_ids = fields.One2many(
-       comodel_name='hr.hospital.diseases',
+    hr_hospital_diagnosis_ids = fields.One2many(
+       comodel_name='hr.hospital.diagnosis',
        inverse_name='hr_hospital_visit_id',
-       string="Diseases",
+       string="Diagnosis",
     )
 
     @api.constrains('planned_date','visit_date','hr_hospital_doctor_id')
@@ -49,9 +49,9 @@ class HrHospitalVisit(models.Model):
     @api.ondelete(at_uninstall=False)
     def _prevent_delete(self):
         for record in self:
-            if record.hr_hospital_diseases_ids:
+            if record.hr_hospital_diagnosis_ids:
                 raise ValidationError(
-                    "You cannot delete a visit that has 'diseases'.")
+                    "You cannot delete a visit that has 'diagnosis'.")
 
     @api.constrains('hr_hospital_doctor_id', 'hr_hospital_patient_id', 'visit_date')
     def _check_duplicate(self):
