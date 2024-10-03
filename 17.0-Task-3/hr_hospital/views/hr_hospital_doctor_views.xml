@@ -1,0 +1,58 @@
+<odoo>
+        <record id="hr_hospital_doctor_tree" model="ir.ui.view">
+            <field name="name">hr.hospital.doctor.tree ()</field>
+            <field name="model">hr.hospital.doctor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="phone"/>
+                    <field name="gender"/>
+                    <field name="description"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_hospital_doctor_views_form" model="ir.ui.view">
+            <field name="name">hr.hospital.doctor.form ()</field>
+            <field name="model">hr.hospital.doctor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header></header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="first_name"/>
+                                <field name="last_name"/>
+                                <field name="phone"/>
+                                <field name="gender"/>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="foto" widget='image' class="oe_avatar m-0"
+                                option='{"zoom": true, "preview_image":"avatar_256"}'/>
+                                <field name="specialization"/>
+                                <field name="mentor"/>
+                                <field name="is_intern"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_hr_hospital_doctor_window" model="ir.actions.act_window">
+            <field name="name">Doctor</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.hospital.doctor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="hr_hospital_menu_doctor"
+                  action="action_hr_hospital_doctor_window"
+                  parent="hr_hospital_menu_catalog"
+                  name="Doctor" sequence="400"/>
+
+</odoo>

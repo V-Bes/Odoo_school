@@ -1,0 +1,31 @@
+<odoo>
+    <record id="hr_hospital_disease_1" model="hr.hospital.disease">
+        <field name="name">Category disease</field>
+        <field name="parent_id" eval="False"/>
+    </record>
+
+    <record id="hr_hospital_disease_2" model="hr.hospital.disease">
+        <field name="name">Category 1</field>
+        <field name="parent_id" ref="hr_hospital_disease_1"/>
+    </record>
+
+    <record id="hr_hospital_disease_3" model="hr.hospital.disease">
+        <field name="name">Category 2</field>
+        <field name="parent_id" ref="hr_hospital_disease_1"/>
+    </record>
+
+    <record id="hr_hospital_disease_4" model="hr.hospital.disease">
+        <field name="name">Disease 1</field>
+        <field name="parent_id" ref="hr_hospital_disease_3"/>
+    </record>
+
+    <record id="hr_hospital_disease_5" model="hr.hospital.disease">
+        <field name="name">Disease 2</field>
+        <field name="parent_id" ref="hr_hospital_disease_1"/>
+    </record>
+
+    <record id="hr_hospital_disease_5" model="hr.hospital.disease">
+        <field name="name">Disease 3</field>
+        <field name="parent_id" ref="hr_hospital_disease_3"/>
+    </record>
+</odoo>

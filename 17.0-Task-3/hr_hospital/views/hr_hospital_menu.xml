@@ -1,0 +1,13 @@
+<odoo>
+
+  <menuitem id="hr_hospital_main_menu"
+            name="Hospital" sequence="300"/>
+
+  <menuitem id="hr_hospital_menu_catalog"
+            parent="hr_hospital_main_menu"
+            name="Catalog" sequence="100"/>
+
+  <menuitem id="hr_hospital_menu_main_settings"
+            parent="hr_hospital_main_menu"
+            name="Settings" sequence="900"/>
+</odoo>
