@@ -11,6 +11,7 @@ class HrHospitalDisease(models.Model):
     _parent_store = True  # Включает поддержку хранения иерархии
     _parent_name = 'parent_id'  # Указывает поле родительской связи (по умолчанию 'parent_id')
 
+
     name = fields.Char(
         string='Disease',
         required=True)
@@ -19,8 +20,7 @@ class HrHospitalDisease(models.Model):
         comodel_name='hr.hospital.disease',
         string='Parent Disease',
         index=True,
-        ondelete='restrict'
-        # Не позволяет удалять, если есть подчиненные записи
+
     )
 
     child_ids = fields.One2many(
@@ -29,7 +29,10 @@ class HrHospitalDisease(models.Model):
         string='Child Disease'
     )
 
-    parent_path = fields.Char(index=True)
+    parent_path = fields.Char(
+        index=True,
+        unaccent=False
+    )
 
     # Поля для отображения на экране дерева
     display_name = fields.Char(compute='_compute_display_name', store=True)
