@@ -5,18 +5,18 @@
         <field name="arch" type="xml">
             <form>
                 <div class="alert alert-info text-center" role="status">
-                    This wizard add possibility to add readers to current book, who are reading this book now
+                    This wizard add possibility to change patient
                 </div>
                 <group>
                     <group>
-                        <field name="patient_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        <field name="patient_id" widget="many2one_tags" options="{'color_field': 'color'}"/>
                     </group>
                     <group>
-                        <field name="res_doctor_id"/>
+                        <field name="doctor_id"/>
                     </group>
                 </group>
                 <footer>
-                    <button string="Add Readers" name="add_reader" type="object" class="oe_highlight" data-hotkey="q"/>
+                    <button string="Change patient" name="change_patient" type="object" class="oe_highlight" data-hotkey="q"/>
                     <button string="Cancel" class="btn btn-secondary" special="cancel" data-hotkey="x"/>
                 </footer>
             </form>
@@ -27,5 +27,6 @@
         <field name="name">Add readers</field>
         <field name="res_model">hr.group.change.patient.wizard</field>
         <field name="view_mode">form</field>
+        <field name="target">new</field>
     </record>
 </odoo>

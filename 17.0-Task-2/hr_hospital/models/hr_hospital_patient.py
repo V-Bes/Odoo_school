@@ -30,6 +30,20 @@ class HrHospitalPatient(models.Model):
         string="Doctor",
     )
 
+    color = fields.Integer(string='Color Index')
+
+    def test_button(self):
+        # Здесь можно добавить любую логику
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'message': 'Test button clicked!',
+                'type': 'info',
+                'sticky': False,
+            }
+        }
+
     def _compute_age(self):
         for record in self:
             if record.birthday:
