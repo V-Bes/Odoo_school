@@ -9,9 +9,6 @@
                 </div>
                 <group>
                     <group>
-                        <field name="patient_id" widget="many2one_tags" options="{'color_field': 'color'}"/>
-                    </group>
-                    <group>
                         <field name="doctor_id"/>
                     </group>
                 </group>
@@ -24,7 +21,7 @@
     </record>
 
     <record id="hr_group_change_patient_wizard_action" model="ir.actions.act_window">
-        <field name="name">Add readers</field>
+        <field name="name">Change patient</field>
         <field name="res_model">hr.group.change.patient.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>

@@ -1,0 +1,34 @@
+<odoo>
+    <record id="report_disease_wizard_form" model="ir.ui.view">
+        <field name="name">report.disease.wizard.form</field>
+        <field name="model">report.disease.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="alert alert-info text-center" role="status">
+                    This wizard report disease
+                </div>
+                <group>
+                    <group>
+                        <field name="doctor_ids" widget="many2many_tags" />
+                        <field name="disease_ids" widget="many2many_tags" />
+                    </group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Generate a report" name="report_disease_wizard" type="object" class="oe_highlight" data-hotkey="q"/>
+                    <button string="Cancel" class="btn btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="report_disease_wizard_action" model="ir.actions.act_window">
+        <field name="name">Generate report</field>
+        <field name="res_model">report.disease.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

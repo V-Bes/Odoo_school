@@ -1,4 +1,4 @@
-"id","name","description"
-"hr_hospital_diagnosis_1","diagnosis 1","description 1"
-"hr_hospital_diagnosis_2","diagnosis 2","description 2"
-"hr_hospital_diagnosis_3","diagnosis 3","description 3"
+"id","name","hr_hospital_visit_id:id","hr_hospital_disease_id:id",approved
+"hr_hospital_diagnosis_1","diagnosis 1","hr_hospital_visit_1","hr_hospital.hr_hospital_disease_5"
+"hr_hospital_diagnosis_2","diagnosis 2","hr_hospital_visit_2","hr_hospital.hr_hospital_disease_6"
+"hr_hospital_diagnosis_3","diagnosis 3","hr_hospital_visit_3","hr_hospital.hr_hospital_disease_5",True

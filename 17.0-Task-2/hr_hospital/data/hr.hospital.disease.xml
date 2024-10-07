@@ -24,7 +24,7 @@
         <field name="parent_id" ref="hr_hospital_disease_1"/>
     </record>
 
-    <record id="hr_hospital_disease_5" model="hr.hospital.disease">
+    <record id="hr_hospital_disease_6" model="hr.hospital.disease">
         <field name="name">Disease 3</field>
         <field name="parent_id" ref="hr_hospital_disease_3"/>
     </record>

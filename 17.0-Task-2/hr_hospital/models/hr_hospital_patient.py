@@ -10,6 +10,7 @@ class HrHospitalPatient(models.Model):
     _name = 'hr.hospital.patient'
     _inherit = ['human.mixin', ]
     _description = 'Patient'
+    _rec_name = 'last_name'
 
     birthday = fields.Date()
     age = fields.Integer(
@@ -33,7 +34,6 @@ class HrHospitalPatient(models.Model):
     color = fields.Integer(string='Color Index')
 
     def test_button(self):
-        # Здесь можно добавить любую логику
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',

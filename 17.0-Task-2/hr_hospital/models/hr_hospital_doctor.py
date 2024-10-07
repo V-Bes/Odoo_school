@@ -9,6 +9,7 @@ class HrHospitalDoctor(models.Model):
     _name = 'hr.hospital.doctor'
     _inherit = ['human.mixin']
     _description = 'Doctor'
+    _rec_name = 'last_name'
 
     description = fields.Text()
 

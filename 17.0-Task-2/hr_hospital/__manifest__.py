@@ -7,17 +7,19 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'data/hr.hospital.visit.csv',
-        'data/hr.hospital.diagnosis.csv',
+        'data/hr.hospital.visit.xml',
         'data/hr.hospital.doctor.csv',
         'data/hr.hospital.patient.csv',
         'data/hr.hospital.disease.xml',
+        'data/hr.hospital.diagnosis.csv',
         'wizard/hr_group_change_patient_wizard_view.xml',
+        'wizard/report_disease_wizard_view.xml',
         'views/hr_hospital_menu.xml',
         'views/hr_hospital_patient_views.xml',
         'views/hr_hospital_doctor_views.xml',
         'views/hr_hospital_visit_views.xml',
         'views/hr_hospital_disease_views.xml',
+        'views/hr_hospital_diagnosis_views.xml',
 
     ],
     'demo': [
