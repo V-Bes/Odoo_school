@@ -1,6 +1,6 @@
 import logging
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -30,4 +30,5 @@ class HrHospitalDiagnosis(models.Model):
     def _onchange_approved(self):
         if (self.approved
                 and self.hr_hospital_visit_id.hr_hospital_doctor_id.is_intern):
-            raise ValidationError('The intern cannot confirm the diagnosis.')
+            raise ValidationError(_('The intern cannot '
+                                    'confirm the diagnosis.'))

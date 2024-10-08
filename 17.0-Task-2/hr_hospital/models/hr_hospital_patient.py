@@ -14,17 +14,12 @@ class HrHospitalPatient(models.Model):
 
     birthday = fields.Date()
     age = fields.Integer(
-        string="Age",
         compute='_compute_age'
     )
 
-    passport = fields.Text(
-        string='Passport'
-    )
+    passport = fields.Text()
 
-    contact = fields.Char(
-        string='Contact'
-    )
+    contact = fields.Char()
 
     hr_hospital_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',

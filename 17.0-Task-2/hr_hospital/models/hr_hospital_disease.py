@@ -43,6 +43,6 @@ class HrHospitalDisease(models.Model):
         for disease in self:
             if disease.parent_id:
                 disease.display_name = '%s / %s' % (
-                disease.parent_id.display_name, disease.name)
+                    disease.parent_id.display_name, disease.name)
             else:
                 disease.display_name = disease.name

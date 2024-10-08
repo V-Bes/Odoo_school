@@ -1,5 +1,5 @@
 import logging
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ class HrHospitalDoctor(models.Model):
     mentor = fields.Many2one(
         comodel_name="hr.hospital.doctor",
         domain=[
-            ('is_intern','=',False)
+            ('is_intern', '=', False)
         ],
     )
 
@@ -40,8 +40,8 @@ class HrHospitalDoctor(models.Model):
     def _check_duplicate(self):
         for record in self:
             if record.id == record.mentor.id:
-                raise ValidationError(
-                    'A doctor cannot be his own mentor.')
+                raise ValidationError(_(
+                    'A doctor cannot be his own mentor.'))
             if not record.is_intern:
-                raise ValidationError(
-                    'Choosing a mentor is only possible for an intern.')
+                raise ValidationError(_(
+                    'Choosing a mentor is only possible for an intern.'))

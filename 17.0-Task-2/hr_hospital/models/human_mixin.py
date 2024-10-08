@@ -11,17 +11,16 @@ class HumanMixin(models.AbstractModel):
 
     first_name = fields.Char()
     last_name = fields.Char()
-    phone = fields.Char(String='Phone Number')
+    phone = fields.Char()
+
     gender = fields.Selection(
         selection=[
-            ('male','Male'),
-            ('female','Female'),
+            ('male', 'Male'),
+            ('female', 'Female'),
         ],
-    string='Gender'
     )
+
     foto = fields.Image(
         max_width=512,
         max_height=512,
     )
-
-
