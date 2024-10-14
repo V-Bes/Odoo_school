@@ -38,6 +38,15 @@ class HrHospitalVisit(models.Model):
         string="Diagnosis",
     )
 
+    # for booking calendar
+    start_visit_date = fields.Date(
+        default=fields.Date.today(),
+        required=True,
+    )
+    end_visit_date = fields.Date(
+        default=fields.Date.today(),
+    )
+
     @api.constrains('planned_date', 'visit_date',
                     'hr_hospital_doctor_id')
     def _check_planned_date(self):
