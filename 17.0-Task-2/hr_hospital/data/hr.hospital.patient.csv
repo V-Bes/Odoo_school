@@ -1,4 +1,4 @@
-"id","first_name","last_name","hr_hospital_doctor_id:id"
-"hr_hospital_patient_1","Tom","Curat","hr_hospital.hr_hospital_doctor_1"
-"hr_hospital_patient_2","Sten","Fashovski","hr_hospital.hr_hospital_doctor_2"
-"hr_hospital_patient_3","Jim","Perry","hr_hospital.hr_hospital_doctor_3"
+"id","first_name","last_name","phone","hr_hospital_doctor_id:id"
+"hr_hospital_patient_1","Tom","Curat","380945632365","hr_hospital.hr_hospital_doctor_1"
+"hr_hospital_patient_2","Sten","Fashovski","380946589527","hr_hospital.hr_hospital_doctor_2"
+"hr_hospital_patient_3","Jim","Perry","380949658631","hr_hospital.hr_hospital_doctor_3"

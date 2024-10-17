@@ -15,11 +15,13 @@
         'wizard/hr_group_change_patient_wizard_view.xml',
         'wizard/report_disease_wizard_view.xml',
         'views/hr_hospital_menu.xml',
-        'views/hr_hospital_patient_views.xml',
         'views/hr_hospital_doctor_views.xml',
         'views/hr_hospital_visit_views.xml',
         'views/hr_hospital_disease_views.xml',
         'views/hr_hospital_diagnosis_views.xml',
+        'views/hr_hospital_patient_views.xml',
+        'views/res_partner_view.xml',
+        'wizard/view_visits_patient_wizard_view.xml',
 
     ],
     'demo': [

@@ -8,7 +8,7 @@ _logger = logging.getLogger(__name__)
 
 class HrHospitalPatient(models.Model):
     _name = 'hr.hospital.patient'
-    _inherit = ['human.mixin', ]
+    _inherit = ['human.mixin',]
     _description = 'Patient'
     _rec_name = 'last_name'
 
@@ -25,6 +25,25 @@ class HrHospitalPatient(models.Model):
         comodel_name='hr.hospital.doctor',
         string="Doctor",
     )
+
+    visits_ids = fields.One2many(
+        comodel_name='hr.hospital.visit',
+        inverse_name='hr_hospital_patient_id',
+    )
+
+    hr_hospital_diagnosis_ids = fields.One2many(
+        compute='_compute_diagnosis',
+        comodel_name='hr.hospital.diagnosis',
+        inverse_name='hr_hospital_patient_id',
+        #store=False
+    )
+
+    def _compute_diagnosis(self):
+        for record in self:
+            diagnosis_ids = self.env['hr.hospital.diagnosis']  # Создаем пустой набор записей для диагностики
+            for visit in record.visits_ids:
+                diagnosis_ids |= visit.hr_hospital_diagnosis_ids  # Добавляем связанные диагнозы
+            record.hr_hospital_diagnosis_ids = diagnosis_ids  # Устанавливаем значения для поля
 
     color = fields.Integer(string='Color Index')
 

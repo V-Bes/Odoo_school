@@ -53,8 +53,8 @@
             <field name="name">hr.hospital.visit.search (hr_hospital_visit)</field>
             <field name="model">hr.hospital.visit</field>
             <field name="arch" type="xml">
-                <search string="Filters">
-                    <filter string="Status visit completed" domain="[('status_visit','=','completed')]" name="status_visit_completed"/>
+                <search string="Group By">
+                    <filter string="Status visit" domain="[]" name="status_visit_group" context="{'group_by':'status_visit'}"/>
                  </search>
             </field>
         </record>

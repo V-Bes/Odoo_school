@@ -21,6 +21,9 @@
             <field name="model">hr.hospital.patient</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button name="%(hr_hospital.view_visits_patient_wizard_action)d" type="action" string="View visits"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
@@ -37,10 +40,23 @@
                                 <field name="hr_hospital_doctor_id" widget="many2one_tags"/>
                                 <field name="contact"/>
                                 <field name="passport"/>
+                                <field name="visits_ids" widget="many2many_tags"/>
+                                <field name="hr_hospital_diagnosis_ids" widget="one2many_tags"/>
                             </group>
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="hr_hospital_patient_search" model="ir.ui.view">
+            <field name="name">hr.hospital.patient.search (hr_hospital_patient)</field>
+            <field name="model">hr.hospital.patient</field>
+            <field name="arch" type="xml">
+                <search string="Filters">
+                    <field string="Patients Name" name="first_name" operator="="/>
+                    <field string="Patients Phone" name="phone" operator="="/>
+                 </search>
             </field>
         </record>
 
