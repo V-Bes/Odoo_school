@@ -38,7 +38,6 @@ class HrHospitalVisit(models.Model):
         string="Diagnosis",
     )
 
-    # for booking calendar
     start_visit_date = fields.Date(
         default=fields.Date.today(),
         required=True,
@@ -46,6 +45,20 @@ class HrHospitalVisit(models.Model):
     end_visit_date = fields.Date(
         default=fields.Date.today(),
     )
+
+    display_name = fields.Char(
+        compute='_compute_display_name',
+        store=True
+    )
+
+    @api.depends('planned_date', 'visit_date')
+    def _compute_display_name(self):
+        for diagnosis in self:
+            if diagnosis.visit_date:
+                diagnosis.display_name = '%s / %s' % (
+                    diagnosis.visit_date, diagnosis.planned_date)
+            else:
+                diagnosis.display_name = diagnosis.planned_date
 
     @api.constrains('planned_date', 'visit_date',
                     'hr_hospital_doctor_id')

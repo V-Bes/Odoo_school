@@ -64,7 +64,7 @@
             <field name="model">hr.hospital.visit</field>
             <field name="priority">50</field>
             <field name="arch" type="xml">
-            <pivot string="Pivot Example" sample="1" disable_linking="1" display_quantity="1">
+            <pivot string="Pivot" sample="1" disable_linking="1" display_quantity="1">
                 <field name="create_date" interval="month" type="col"/>
                 <field name="hr_hospital_doctor_id" type="row"/>
                 <field name="status_visit" type="col"/>
