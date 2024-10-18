@@ -30,6 +30,18 @@
             </field>
         </record>
 
+        <record id="hr_hospital_disease_search" model="ir.ui.view">
+            <field name="name">hr.hospital.disease.search (hr_hospital_disease)</field>
+            <field name="model">hr.hospital.disease</field>
+            <field name="arch" type="xml">
+                <search string="Filters">
+                    <searchpanel>
+                        <field name="parent_id" string="Filter by disease" icon="fa-building" enable_counters="1" hierarchize="True"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
         <record id="action_hr_hospital_disease_window"
                 model="ir.actions.act_window">
             <field name="name">Disease</field>

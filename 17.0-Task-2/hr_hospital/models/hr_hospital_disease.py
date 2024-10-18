@@ -38,6 +38,8 @@ class HrHospitalDisease(models.Model):
         store=True
     )
 
+    is_category = fields.Boolean()
+
     @api.depends('name', 'parent_id')
     def _compute_display_name(self):
         for disease in self:
