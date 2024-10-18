@@ -14,11 +14,16 @@ class HrHospitalDoctor(models.Model):
     description = fields.Text()
 
     is_intern = fields.Boolean(
-        string="Intern",
         default=False
     )
 
-    mentor = fields.Many2one(
+    intern_ids = fields.One2many(
+        comodel_name='hr.hospital.doctor',
+        inverse_name='mentor_id',
+        string='Interns',
+    )
+
+    mentor_id = fields.Many2one(
         comodel_name="hr.hospital.doctor",
         domain=[
             ('is_intern', '=', False)
@@ -36,10 +41,10 @@ class HrHospitalDoctor(models.Model):
         ('neurologist', 'Neurologist'),
     ])
 
-    @api.constrains('mentor')
+    @api.constrains('mentor_id')
     def _check_duplicate(self):
         for record in self:
-            if record.id == record.mentor.id:
+            if record.id == record.mentor_id.id:
                 raise ValidationError(_(
                     'A doctor cannot be his own mentor.'))
             if not record.is_intern:
