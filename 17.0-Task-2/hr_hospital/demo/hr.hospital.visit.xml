@@ -1,0 +1,57 @@
+<odoo>
+    <record id="hr_hospital_visit_1" model="hr.hospital.visit">
+        <field name="name">1</field>
+        <field name="planned_date">2024-10-14</field>
+        <field name="visit_date">2024-10-15</field>
+        <field name="status_visit">planned</field>
+        <field name="hr_hospital_doctor_id" ref="hr_hospital_doctor_1"/>
+        <field name="hr_hospital_patient_id" ref="hr_hospital_patient_1"/>
+    </record>
+
+    <record id="hr_hospital_visit_2" model="hr.hospital.visit">
+        <field name="name">2</field>
+        <field name="planned_date">2024-10-11</field>
+        <field name="visit_date">2024-10-12</field>
+        <field name="status_visit">planned</field>
+        <field name="hr_hospital_doctor_id" ref="hr_hospital_doctor_2"/>
+        <field name="hr_hospital_patient_id" ref="hr_hospital_patient_2"/>
+    </record>
+
+    <record id="hr_hospital_visit_3" model="hr.hospital.visit">
+        <field name="name">3</field>
+        <field name="planned_date">2024-10-16</field>
+        <field name="visit_date">2024-10-17</field>
+        <field name="status_visit">planned</field>
+        <field name="hr_hospital_doctor_id" ref="hr_hospital_doctor_3"/>
+        <field name="hr_hospital_patient_id" ref="hr_hospital_patient_3"/>
+    </record>
+
+    <record id="hr_hospital_visit_4" model="hr.hospital.visit">
+        <field name="name">4</field>
+        <field name="planned_date">2024-10-18</field>
+        <field name="visit_date">2024-10-19</field>
+        <field name="status_visit">planned</field>
+        <field name="hr_hospital_doctor_id" ref="hr_hospital_doctor_2"/>
+        <field name="hr_hospital_patient_id" ref="hr_hospital_patient_3"/>
+    </record>
+
+    <record id="hr_hospital_visit_5" model="hr.hospital.visit">
+        <field name="name">5</field>
+        <field name="planned_date">2024-10-21</field>
+        <field name="visit_date">2024-10-24</field>
+        <field name="status_visit">planned</field>
+        <field name="hr_hospital_doctor_id" ref="hr_hospital_doctor_3"/>
+        <field name="hr_hospital_patient_id" ref="hr_hospital_patient_1"/>
+    </record>
+
+    <record id="hr_hospital_visit_6" model="hr.hospital.visit">
+        <field name="name">6</field>
+        <field name="planned_date">2024-11-21</field>
+        <field name="visit_date">2024-11-24</field>
+        <field name="status_visit">planned</field>
+        <field name="hr_hospital_doctor_id" ref="hr_hospital_doctor_3"/>
+        <field name="hr_hospital_patient_id" ref="hr_hospital_patient_3"/>
+    </record>
+
+</odoo>
+

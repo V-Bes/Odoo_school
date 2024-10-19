@@ -36,9 +36,25 @@ class ReportDiseaseWizard(models.TransientModel):
             domain_diagnosis.append(('hr_hospital_disease_id', 'in',
                                      self.disease_ids.ids))
         if self.doctor_ids:
-            domain_diagnosis.append(('hr_hospital_doctor_id', 'in',
-                                     self.doctor_ids.ids))
+            domain_diagnosis.append(('hr_hospital_visit_id'
+                                     '.hr_hospital_doctor_id', 'in',
+                                     self.doctor_ids.ids)
+                                    )
 
-        diagnosis = self.env['hr.hospital.diagnosis'].search(domain_diagnosis)
+        diagnosis_records = (self.env['hr.hospital.diagnosis']
+                             .search(domain_diagnosis, order='name'))
 
-        return diagnosis
+        if not diagnosis_records:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': 'No records found',
+                    'message': 'No diagnosis records match your criteria.',
+                    'sticky': False,
+                }
+            }
+
+        return self.env.ref(
+            'hr_hospital.hr_hospital_disease_main_report').report_action(
+            diagnosis_records)

@@ -23,7 +23,7 @@ class HrHospitalDiagnosis(models.Model):
 
     hr_hospital_patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
-        string="Visit",
+        string="Patient",
     )
 
     hr_hospital_disease_id = fields.Many2one(
@@ -65,11 +65,13 @@ class HrHospitalDiagnosis(models.Model):
         for diagnosis in self:
             if diagnosis.hr_hospital_visit_id:
                 diagnosis.visit_planned_date = (diagnosis.hr_hospital_visit_id
-                                          .planned_date)
+                                                .planned_date)
 
     @api.depends('hr_hospital_disease_id.parent_id')
     def _compute_disease_parent(self):
         for diagnosis in self:
             if diagnosis.hr_hospital_disease_id:
-                diagnosis.disease_parent_id = (diagnosis.hr_hospital_disease_id
-                                          .parent_id)
+                diagnosis.disease_parent_id = (diagnosis
+                                               .hr_hospital_disease_id
+                                               .parent_id
+                                               )

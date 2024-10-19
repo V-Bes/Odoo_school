@@ -1,4 +1,4 @@
-"id","first_name","last_name","phone","hr_hospital_doctor_id:id"
-"hr_hospital_patient_1","Tom","Curat","380945632365","hr_hospital.hr_hospital_doctor_1"
-"hr_hospital_patient_2","Sten","Fashovski","380946589527","hr_hospital.hr_hospital_doctor_2"
-"hr_hospital_patient_3","Jim","Perry","380949658631","hr_hospital.hr_hospital_doctor_3"
+"id","first_name","last_name","phone","hr_hospital_doctor_id:id","gender","birthday"
+"hr_hospital_patient_1","Tom","Curat","380945632365","hr_hospital.hr_hospital_doctor_1","male","1990-10-18"
+"hr_hospital_patient_2","Sten","Fashovski","380946589527","hr_hospital.hr_hospital_doctor_2","male","1992-9-24"
+"hr_hospital_patient_3","Jim","Perry","380949658631","hr_hospital.hr_hospital_doctor_3","male","1995-7-12"

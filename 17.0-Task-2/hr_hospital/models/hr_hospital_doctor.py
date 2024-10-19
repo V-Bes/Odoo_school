@@ -11,6 +11,7 @@ class HrHospitalDoctor(models.Model):
     _description = 'Doctor'
     _rec_name = 'last_name'
 
+    name = fields.Char()
     description = fields.Text()
 
     is_intern = fields.Boolean(

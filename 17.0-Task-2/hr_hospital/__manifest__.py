@@ -20,13 +20,16 @@
         'views/hr_hospital_disease_views.xml',
         'views/hr_hospital_diagnosis_views.xml',
         'views/hr_hospital_patient_views.xml',
-        'views/res_partner_view.xml',
         'wizard/view_visits_patient_wizard_view.xml',
+        'report/hr_hospital_disease_report.xml',
 
     ],
     'demo': [
+        'demo/hr.hospital.visit.xml',
         'demo/hr.hospital.doctor.csv',
         'demo/hr.hospital.patient.csv',
+        'demo/hr.hospital.disease.xml',
+        'demo/hr.hospital.diagnosis.csv',
     ],
 
     'installable': True,

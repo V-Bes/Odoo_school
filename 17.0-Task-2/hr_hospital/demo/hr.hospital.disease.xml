@@ -1,0 +1,32 @@
+<odoo>
+    <record id="hr_hospital_disease_1" model="hr.hospital.disease">
+        <field name="name">Infections</field>
+        <field name="is_category">True</field>
+        <field name="parent_id" eval="False"/>
+    </record>
+
+    <record id="hr_hospital_disease_2" model="hr.hospital.disease">
+        <field name="name">Intestinal</field>
+        <field name="parent_id" ref="hr_hospital_disease_1"/>
+    </record>
+
+    <record id="hr_hospital_disease_3" model="hr.hospital.disease">
+        <field name="name">Respiratory</field>
+        <field name="parent_id" ref="hr_hospital_disease_1"/>
+    </record>
+
+    <record id="hr_hospital_disease_4" model="hr.hospital.disease">
+        <field name="name">Dysentery</field>
+        <field name="parent_id" ref="hr_hospital_disease_2"/>
+    </record>
+
+    <record id="hr_hospital_disease_5" model="hr.hospital.disease">
+        <field name="name">Flu</field>
+        <field name="parent_id" ref="hr_hospital_disease_3"/>
+    </record>
+
+    <record id="hr_hospital_disease_6" model="hr.hospital.disease">
+        <field name="name">Measles</field>
+        <field name="parent_id" ref="hr_hospital_disease_3"/>
+    </record>
+</odoo>

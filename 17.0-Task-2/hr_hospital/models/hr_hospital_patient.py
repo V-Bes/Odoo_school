@@ -35,15 +35,14 @@ class HrHospitalPatient(models.Model):
         compute='_compute_diagnosis',
         comodel_name='hr.hospital.diagnosis',
         inverse_name='hr_hospital_patient_id',
-        #store=False
     )
 
     def _compute_diagnosis(self):
         for record in self:
-            diagnosis_ids = self.env['hr.hospital.diagnosis']  # Создаем пустой набор записей для диагностики
+            diagnosis_ids = self.env['hr.hospital.diagnosis']
             for visit in record.visits_ids:
-                diagnosis_ids |= visit.hr_hospital_diagnosis_ids  # Добавляем связанные диагнозы
-            record.hr_hospital_diagnosis_ids = diagnosis_ids  # Устанавливаем значения для поля
+                diagnosis_ids |= visit.hr_hospital_diagnosis_ids
+            record.hr_hospital_diagnosis_ids = diagnosis_ids
 
     color = fields.Integer(string='Color Index')
 
