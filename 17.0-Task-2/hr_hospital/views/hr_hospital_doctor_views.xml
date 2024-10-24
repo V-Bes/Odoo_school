@@ -5,7 +5,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <header>
-                        <button name="%(hr_hospital.report_disease_wizard_action)d" type="action" string="Generate report"/>
+                        <button name="%(hr_hospital.report_disease_wizard_action)d" type="action" string="Disease report"/>
+                        <button name="%(hr_hospital.hr_hospital_doctor_main_report)d" type="action" string="Doctor report"/>
                     </header>
                     <field name="first_name"/>
                     <field name="last_name"/>

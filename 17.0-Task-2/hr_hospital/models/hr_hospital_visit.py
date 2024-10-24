@@ -51,6 +51,10 @@ class HrHospitalVisit(models.Model):
         store=True
     )
 
+    hr_hospital_doctor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+    )
+
     @api.depends('planned_date', 'visit_date')
     def _compute_display_name(self):
         for diagnosis in self:

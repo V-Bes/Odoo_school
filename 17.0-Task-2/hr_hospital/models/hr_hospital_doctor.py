@@ -42,6 +42,11 @@ class HrHospitalDoctor(models.Model):
         ('neurologist', 'Neurologist'),
     ])
 
+    visit_ids = fields.One2many(
+        comodel_name='hr.hospital.visit',
+        inverse_name='hr_hospital_doctor_id',
+        )
+
     @api.constrains('mentor_id')
     def _check_duplicate(self):
         for record in self:

@@ -14,6 +14,7 @@
         'data/hr.hospital.diagnosis.csv',
         'wizard/hr_group_change_patient_wizard_view.xml',
         'wizard/report_disease_wizard_view.xml',
+        'report/hr_hospital_doctor_report.xml',
         'views/hr_hospital_menu.xml',
         'views/hr_hospital_doctor_views.xml',
         'views/hr_hospital_visit_views.xml',
