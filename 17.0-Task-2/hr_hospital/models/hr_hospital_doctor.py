@@ -47,6 +47,10 @@ class HrHospitalDoctor(models.Model):
         inverse_name='hr_hospital_doctor_id',
         )
 
+    color = fields.Integer(
+        string='Color Index'
+    )
+
     @api.constrains('mentor_id')
     def _check_duplicate(self):
         for record in self:

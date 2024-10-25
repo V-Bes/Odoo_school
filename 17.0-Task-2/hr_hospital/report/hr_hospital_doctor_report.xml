@@ -112,6 +112,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <br/>
                     <t t-call="hr_hospital.hr_hospital_footer_template"/>
                     <div style="page-break-after: always;">
                     </div>
