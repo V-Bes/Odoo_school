@@ -42,6 +42,7 @@
                                 <field name="passport"/>
                                 <field name="visits_ids" widget="many2many_tags"/>
                                 <field name="hr_hospital_diagnosis_ids" widget="one2many_tags"/>
+                                <field name="user_id"/>
                             </group>
                         </group>
                     </sheet>

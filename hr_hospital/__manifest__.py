@@ -6,7 +6,9 @@
     'version': '17.0.1.1.0',
 
     'data': [
+        'security/hr_hospital_groups.xml',
         'security/ir.model.access.csv',
+        'security/hr_hospital_security.xml',
         'data/hr.hospital.doctor.csv',
         'data/hr.hospital.patient.csv',
         'data/hr.hospital.visit.xml',

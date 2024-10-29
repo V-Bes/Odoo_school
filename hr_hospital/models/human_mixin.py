@@ -24,3 +24,7 @@ class HumanMixin(models.AbstractModel):
         max_width=512,
         max_height=512,
     )
+
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+    )

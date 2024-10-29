@@ -35,6 +35,7 @@
                                 <field name="gender"/>
                                 <field name="description"/>
                                 <field name="is_intern"/>
+                                <field name="user_id"/>
                             </group>
                             <group>
                                 <field name="foto" widget='image' class="oe_avatar m-0"
