@@ -14,7 +14,9 @@ class HrHospitalDisease(models.Model):
 
     name = fields.Char(
         string='Disease',
-        required=True)
+        required=True,
+        translate=True
+    )
 
     parent_id = fields.Many2one(
         comodel_name='hr.hospital.disease',
@@ -35,7 +37,8 @@ class HrHospitalDisease(models.Model):
 
     display_name = fields.Char(
         compute='_compute_display_name',
-        store=True
+        store=True,
+        translate=True
     )
 
     is_category = fields.Boolean()
