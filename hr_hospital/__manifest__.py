@@ -1,5 +1,5 @@
 {
-    'name': 'HR hospital',
+    'name': 'HR hospital (VLD)',
     'author': 'Vladislav',
     'category': 'Customizations',
     'license': 'OPL-1',
