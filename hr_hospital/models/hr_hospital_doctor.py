@@ -6,6 +6,9 @@ _logger = logging.getLogger(__name__)
 
 
 class HrHospitalDoctor(models.Model):
+    '''
+    This model contains data of doctors available in a given hospital
+    '''
     _name = 'hr.hospital.doctor'
     _inherit = ['human.mixin']
     _description = 'Doctor'
@@ -53,6 +56,9 @@ class HrHospitalDoctor(models.Model):
 
     @api.constrains('mentor_id')
     def _check_duplicate(self):
+        '''
+        This method checking the correctness of filling out the doctor card
+        '''
         for record in self:
             if record.id == record.mentor_id.id:
                 raise ValidationError(_(

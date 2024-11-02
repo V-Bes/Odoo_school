@@ -7,6 +7,9 @@ _logger = logging.getLogger(__name__)
 
 
 class HrHospitalVisit(models.Model):
+    '''
+    This model contains detailed data about future and past visits.
+    '''
     _name = 'hr.hospital.visit'
     _description = 'Visit'
 
@@ -57,6 +60,9 @@ class HrHospitalVisit(models.Model):
 
     @api.depends('planned_date', 'visit_date')
     def _compute_display_name(self):
+        '''
+        This method sets the name of the view
+        '''
         for diagnosis in self:
             if diagnosis.visit_date:
                 diagnosis.display_name = '%s / %s' % (
@@ -67,6 +73,9 @@ class HrHospitalVisit(models.Model):
     @api.constrains('planned_date', 'visit_date',
                     'hr_hospital_doctor_id')
     def _check_planned_date(self):
+        '''
+        This method prevents dates from being changed on a completed visit.
+        '''
         for record in self:
             if record.status_visit == 'completed':
                 raise ValidationError(_('It is forbidden to change '
@@ -76,6 +85,9 @@ class HrHospitalVisit(models.Model):
 
     @api.ondelete(at_uninstall=False)
     def _prevent_delete(self):
+        '''
+        This method prohibits deleting visits with a diagnosis
+        '''
         for record in self:
             if record.hr_hospital_diagnosis_ids:
                 raise ValidationError(_(
@@ -84,6 +96,9 @@ class HrHospitalVisit(models.Model):
     @api.constrains('hr_hospital_doctor_id', 'hr_hospital_patient_id',
                     'visit_date')
     def _check_duplicate(self):
+        '''
+        This method prevents the creation of duplicate visits
+        '''
         for record in self:
             is_duplicate = self.search([
                 ('hr_hospital_doctor_id', '=',

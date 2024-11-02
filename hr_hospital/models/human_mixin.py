@@ -6,6 +6,9 @@ _logger = logging.getLogger(__name__)
 
 
 class HumanMixin(models.AbstractModel):
+    '''
+    This model is a mixin for the patient and doctor models
+    '''
     _name = 'human.mixin'
     _description = 'Human Mixin'
 

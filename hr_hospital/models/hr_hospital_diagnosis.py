@@ -7,6 +7,10 @@ _logger = logging.getLogger(__name__)
 
 
 class HrHospitalDiagnosis(models.Model):
+    '''
+    This model contains data about various diagnoses established by
+    a doctor as a result of a patient visit.
+    '''
     _name = 'hr.hospital.diagnosis'
     _description = 'Diagnosis'
 
@@ -49,12 +53,18 @@ class HrHospitalDiagnosis(models.Model):
 
     @api.depends('hr_hospital_disease_id.name')
     def _compute_display_name(self):
+        '''
+        This method sets the name of the view
+        '''
         for diagnosis in self:
             if diagnosis.hr_hospital_disease_id:
                 diagnosis.name = diagnosis.hr_hospital_disease_id.name
 
     @api.onchange('approved')
     def _onchange_approved(self):
+        '''
+        This method do not allow the intern to confirm the diagnosis
+        '''
         if (self.approved
                 and self.hr_hospital_visit_id.hr_hospital_doctor_id.is_intern):
             raise ValidationError(_('The intern cannot '
@@ -62,6 +72,9 @@ class HrHospitalDiagnosis(models.Model):
 
     @api.depends('hr_hospital_visit_id.planned_date')
     def _compute_planned_date(self):
+        '''
+        This method set the planned date when it changes in visits
+        '''
         for diagnosis in self:
             if diagnosis.hr_hospital_visit_id:
                 diagnosis.visit_planned_date = (diagnosis.hr_hospital_visit_id
@@ -69,6 +82,9 @@ class HrHospitalDiagnosis(models.Model):
 
     @api.depends('hr_hospital_disease_id.parent_id')
     def _compute_disease_parent(self):
+        '''
+        This method set the parent disease when it changes in disease
+        '''
         for diagnosis in self:
             if diagnosis.hr_hospital_disease_id:
                 diagnosis.disease_parent_id = (diagnosis

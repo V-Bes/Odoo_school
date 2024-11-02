@@ -7,6 +7,9 @@ _logger = logging.getLogger(__name__)
 
 
 class HrHospitalPatient(models.Model):
+    '''
+    This model contains data from patients who visited this hospital.
+    '''
     _name = 'hr.hospital.patient'
     _inherit = ['human.mixin',]
     _description = 'Patient'
@@ -37,16 +40,22 @@ class HrHospitalPatient(models.Model):
         inverse_name='hr_hospital_patient_id',
     )
 
+    color = fields.Integer(string='Color Index')
+
     def _compute_diagnosis(self):
+        '''
+        This method fill out the diagnosis table
+        '''
         for record in self:
             diagnosis_ids = self.env['hr.hospital.diagnosis']
             for visit in record.visits_ids:
                 diagnosis_ids |= visit.hr_hospital_diagnosis_ids
             record.hr_hospital_diagnosis_ids = diagnosis_ids
 
-    color = fields.Integer(string='Color Index')
-
     def test_button(self):
+        '''
+        This Test method
+        '''
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',
@@ -58,6 +67,9 @@ class HrHospitalPatient(models.Model):
         }
 
     def _compute_age(self):
+        '''
+        This method calculate the patient's age
+        '''
         for record in self:
             if record.birthday:
                 record.age = fields.Date.today().year - record.birthday.year

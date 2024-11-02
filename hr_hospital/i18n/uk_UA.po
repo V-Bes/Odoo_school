@@ -176,7 +176,7 @@ msgstr "Категорія захворювання"
 #. module: hr_hospital
 #: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_diagnosis_graph
 msgid "Disease date For graph"
-msgstr "Дата захворювання для графіка"
+msgstr "Захворювання"
 
 #. module: hr_hospital
 #: model_terms:ir.ui.view,arch_db:hr_hospital.hr_hospital_doctor_tree
@@ -335,12 +335,12 @@ msgstr "Лікарня"
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__hr_hospital_diagnosis_ids
 msgid "Hr Hospital Diagnosis"
-msgstr "Лікарня Діагнози"
+msgstr "Діагнози"
 
 #. module: hr_hospital
 #: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_visit__hr_hospital_doctor_id
 msgid "Hr Hospital Doctor"
-msgstr "Лікарня лікар"
+msgstr "Лікар"
 
 #. module: hr_hospital
 #: model:ir.module.category,name:hr_hospital.category_hr_hospital
@@ -350,12 +350,12 @@ msgstr "Лікарня"
 #. module: hr_hospital
 #: model:ir.actions.report,name:hr_hospital.hr_hospital_disease_main_report
 msgid "Hr hospital diseases"
-msgstr "Лікарня захворювання"
+msgstr "Захворювання"
 
 #. module: hr_hospital
 #: model:ir.actions.report,name:hr_hospital.hr_hospital_doctor_main_report
 msgid "Hr hospital doctor"
-msgstr "Лікарня лікар"
+msgstr "Лікар"
 
 #. module: hr_hospital
 #: model:hr.hospital.disease,name
@@ -439,7 +439,7 @@ msgstr "Менеджер"
 #. module: hr_hospital
 #: model:res.groups,comment:hr_hospital.group_hr_hospital_manager1
 msgid "Managers of the hr_hospital"
-msgstr "Менеджер Лікарня"
+msgstr "Менеджер"
 
 #. module: hr_hospital
 #: model:hr.hospital.disease,name:hr_hospital.hr_hospital_disease_6
@@ -508,7 +508,7 @@ msgstr "Телефони пацієнтів"
 #. module: hr_hospital
 #: model:res.groups,comment:hr_hospital.group_hr_hospital_patient
 msgid "Patients of the hr_hospital"
-msgstr "Пацієнти Лікарня"
+msgstr "Пацієнти"
 
 #. module: hr_hospital
 #: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_doctor__specialization__pharmacist

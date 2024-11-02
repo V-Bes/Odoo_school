@@ -6,6 +6,9 @@ _logger = logging.getLogger(__name__)
 
 
 class HrHospitalDisease(models.Model):
+    '''
+    This model contains a list of possible diseases
+    '''
     _name = 'hr.hospital.disease'
     _description = 'Disease'
     _parent_store = True  # Включает поддержку хранения иерархии
@@ -45,6 +48,9 @@ class HrHospitalDisease(models.Model):
 
     @api.depends('name', 'parent_id')
     def _compute_display_name(self):
+        '''
+        This method sets the name of the view
+        '''
         for disease in self:
             if disease.parent_id:
                 disease.display_name = '%s / %s' % (
