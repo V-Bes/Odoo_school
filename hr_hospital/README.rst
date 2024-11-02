@@ -1,6 +1,6 @@
-==========================
+===========================
 UA Odoo School: HR Hospital
-==========================
+===========================
 
 This module is designed to automate processes related to keeping records of patient visits.
 

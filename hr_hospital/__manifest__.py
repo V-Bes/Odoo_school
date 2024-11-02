@@ -4,6 +4,12 @@
     'category': 'Customizations',
     'license': 'OPL-1',
     'version': '17.0.1.1.0',
+    'price': 1.0,
+    'currency': 'EUR',
+    'support': 'vladioua@gmail.com',
+    'images': ['static/description/banner.png', 'static/description/icon.png'],
+    'installable': True,
+    'auto_install': False,
 
     'data': [
         'security/hr_hospital_groups.xml',
@@ -33,12 +39,5 @@
         'demo/hr.hospital.visit.xml',
         'demo/hr.hospital.disease.xml',
         'demo/hr.hospital.diagnosis.csv',
-    ],
-
-    'installable': True,
-    'auto_install': False,
-
-    'images': [
-        'static/description/icon.png'
     ],
 }
