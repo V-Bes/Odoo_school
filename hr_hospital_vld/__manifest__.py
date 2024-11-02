@@ -1,5 +1,5 @@
 {
-    'name': 'hr_hospital_vld',
+    'name': 'HR Hospital',
     'author': 'Vladyslav Obyhvost',
     'category': 'Customizations',
     'license': 'OPL-1',
