@@ -1,13 +1,11 @@
 import logging
-from datetime import timedelta
-from odoo import fields
-from odoo.exceptions import ValidationError, UserError
+from odoo.exceptions import ValidationError
 from .common import TestCommon
 
 _logger = logging.getLogger(__name__)
 
 
-class TestVisitConstraints(TestCommon):
+class TestHospital(TestCommon):
 
     def test_01_action_visit_duplicate(self):
         with self.assertRaises(ValidationError):
