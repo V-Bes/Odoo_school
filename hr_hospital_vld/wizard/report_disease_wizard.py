@@ -56,5 +56,5 @@ class ReportDiseaseWizard(models.TransientModel):
             }
 
         return self.env.ref(
-            'hr_hospital.hr_hospital_disease_main_report').report_action(
+            'hr_hospital_vld.hr_hospital_disease_main_report').report_action(
             diagnosis_records)

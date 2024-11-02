@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-
         <record id="category_hr_hospital" model="ir.module.category">
             <field name="name">Hr hospital</field>
             <field name="description">User access levels for the hr_hospital</field>

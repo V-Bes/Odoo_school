@@ -14,8 +14,8 @@
         <field name="name">Hr hospital doctor</field>
         <field name="model">hr.hospital.doctor</field>
         <field name="report_type">qweb-html</field>
-        <field name="report_name">hr_hospital.hr_hospital_doctor_main_template</field>
-        <field name="report_file">hr_hospital.hr_hospital_doctor_main_template</field>
+        <field name="report_name">hr_hospital_vld.hr_hospital_doctor_main_template</field>
+        <field name="report_file">hr_hospital_vld.hr_hospital_doctor_main_template</field>
         <field name="print_report_name">"Doctor report"</field>
         <field name="attachment"/>
         <field name="paperformat_id" ref="hr_hospital_doctor_report_A4"/>
@@ -58,7 +58,7 @@
             <t t-foreach="docs" t-as="o">
                 <div class="row">
                     <div t-att="{'width':'100%','style':'font-size:12px;'}">
-                        <t t-call="hr_hospital.hr_hospital_info_company_template"/>
+                        <t t-call="hr_hospital_vld.hr_hospital_info_company_template"/>
                         <h3>Doctor</h3>
                         <tr t-esc="o.first_name"/>
                         <tr t-esc="o.last_name"/>
@@ -113,7 +113,7 @@
                         </table>
                     </div>
                     <br/>
-                    <t t-call="hr_hospital.hr_hospital_footer_template"/>
+                    <t t-call="hr_hospital_vld.hr_hospital_footer_template"/>
                     <div style="page-break-after: always;">
                     </div>
                 </div>

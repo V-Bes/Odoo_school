@@ -46,7 +46,7 @@
 
         <record id="hr_hospital_rule_admin" model="ir.rule">
             <field name="name">Hr hospital administrators have full rights on visits</field>
-            <field name="model_id" ref="hr_hospital.model_hr_hospital_visit"/>
+            <field name="model_id" ref="hr_hospital_vld.model_hr_hospital_visit"/>
             <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_hr_hospital_admin'))]"/>
         </record>

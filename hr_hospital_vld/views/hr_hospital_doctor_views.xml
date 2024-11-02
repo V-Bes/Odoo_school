@@ -5,8 +5,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <header>
-                        <button name="%(hr_hospital.report_disease_wizard_action)d" type="action" string="Disease report"/>
-                        <button name="%(hr_hospital.hr_hospital_doctor_main_report)d" type="action" string="Doctor report"/>
+                        <button name="%(hr_hospital_vld.report_disease_wizard_action)d" type="action" string="Disease report"/>
+                        <button name="%(hr_hospital_vld.hr_hospital_doctor_main_report)d" type="action" string="Doctor report"/>
                     </header>
                     <field name="first_name"/>
                     <field name="last_name"/>
@@ -24,7 +24,7 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="%(hr_hospital.report_disease_wizard_action)d" type="action" string="Generate report"/>
+                        <button name="%(hr_hospital_vld.report_disease_wizard_action)d" type="action" string="Generate report"/>
                     </header>
                     <sheet>
                         <group>
@@ -78,7 +78,7 @@
             <field name="priority">100</field>
             <field name="arch" type="xml">
                 <kanban class="o_kanban_mobile" default_group_by="specialization" default_order="specialization"
-                        records_draggable="False" archivable="False" on_create="hr_hospital.action_hr_hospital_visit_window" draggable="True">
+                        records_draggable="False" archivable="False" on_create="hr_hospital_vld.action_hr_hospital_visit_window" draggable="True">
                     <field name="color"/>
                     <field name="specialization"/>
                     <templates>
