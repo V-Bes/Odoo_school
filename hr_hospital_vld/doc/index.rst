@@ -1,4 +1,4 @@
-Odoo School Lesson 6-5: Module documentation
+HR Hospital: Module documentation
 ============================================
 
 Changelog
