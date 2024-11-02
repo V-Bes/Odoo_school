@@ -1,7 +1,7 @@
 {
     'name': 'HR hospital (VLD)',
     'author': 'Vladislav',
-    'category': 'Customizations',
+    'category': 'Human Resources',
     'license': 'OPL-1',
     'version': '17.0.1.1.0',
     'support': 'vladioua@gmail.com',
