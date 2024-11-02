@@ -4,8 +4,6 @@
     'category': 'Customizations',
     'license': 'OPL-1',
     'version': '17.0.1.1.0',
-    'price': 1.0,
-    'currency': 'EUR',
     'support': 'vladioua@gmail.com',
     'images': ['static/description/banner.png', 'static/description/icon.png'],
     'installable': True,
