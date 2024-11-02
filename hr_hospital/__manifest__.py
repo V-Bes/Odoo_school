@@ -1,11 +1,13 @@
 {
     'name': 'HR hospital (VLD)',
-    'author': 'Vladislav',
-    'category': 'Human Resources',
+    'author': 'Vladyslav Obyhvost',
+    'category': 'Customizations',
     'license': 'OPL-1',
     'version': '17.0.1.1.0',
     'support': 'vladioua@gmail.com',
+    'website': 'https://odoo.school/',
     'images': ['static/description/banner.png', 'static/description/icon.png'],
+    'application': True,
     'installable': True,
     'auto_install': False,
 
